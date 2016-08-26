@@ -1,5 +1,6 @@
 var React = require('react');
 var Modal = require('react-modal');
+var AppointmentStore = require('../stores/AppointmentStore');
 
 const customStyles = {
   content : {
@@ -13,7 +14,15 @@ const customStyles = {
 };
 
 function getStateFromStores() {
-  return null;
+  return AppointmentStore.getAppointments();
+}
+
+function getStateById(e) {
+  e.preventDefault();
+  var state = getStateFromStores();
+  //boxState = state[e.]
+
+
 }
 
 var Hour = React.createClass({
@@ -37,7 +46,8 @@ var Hour = React.createClass({
     //UnreadThreadStore.removeChangeListener(this._onChange);
   },
 
-  _openModal: function() {
+  _openModal: function(e) {
+    console.log(e);
     this.setState({modalIsOpen: true});
   },
 
@@ -46,7 +56,7 @@ var Hour = React.createClass({
   },
 
   /*
-   * Updates state with user info and backround color.
+   * Updates state.
    */
   _processSubmit: function(e) {
     e.preventDefault();
@@ -66,7 +76,7 @@ var Hour = React.createClass({
 
     return (
       <div className="hour-block" onClick={this._openModal} style={{backgroundColor:this.state.backgroundColor}}>
-        <div className="time"><b>{this.props.name}</b></div>
+        <div className={this.props.c}><b>{this.props.name}</b></div>
         <Modal
          isOpen={this.state.modalIsOpen}
          onRequestClose={this._closeModal}
@@ -77,7 +87,7 @@ var Hour = React.createClass({
            <p>Phone: <input /></p>
          </form>
          <h2>Current Meeting</h2>
-          
+
          <button onClick={this._processSubmit}>Submit</button>
        </Modal>
       </div>

@@ -28,11 +28,6 @@ function getStateById(e) {
 var Hour = React.createClass({
 
   getInitialState: function() {
-    // return {
-    //   appointments: getStateFromStores(),
-    //   modalIsOpen: false,
-    //   backgroundColor: "white"
-    // }
     return getStateFromStores();
   },
 
@@ -82,19 +77,10 @@ var Hour = React.createClass({
 
   render: function() {
 
-
-    var name = " ";
-    var number = " ";
-    if(current){
-      var state = this.state;
-      name = state.name;
-      number = state.phone;
-    }
-
-
     return (
       <div className="hour-block" onClick={this._openModal} style={{backgroundColor:this.state.backgroundColor}}>
         <div className={this.props.c}><b>{this.props.name}</b>
+
           <Modal
            isOpen={this.state.modalIsOpen}
            onRequestClose={this._closeModal}
@@ -105,8 +91,8 @@ var Hour = React.createClass({
              <p>Phone: <input /></p>
            </form>
            <h2>Current Meeting: </h2>
-           <p>Name: {this.state['nine']['name']}</p>
-           <p>Phone: {this.state['nine']['phone']}</p>
+           <p>Name: {this.props.contactName} </p>
+           <p>Phone: {this.props.contactNumber}</p>
            <button onClick={this._processSubmit}>Submit</button>
          </Modal>
        </div>

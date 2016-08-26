@@ -1,6 +1,7 @@
 var React = require('react');
 var Modal = require('react-modal');
 var AppointmentStore = require('../stores/AppointmentStore');
+var SetMeeting = require('../actions/ClickSetMeeting');
 
 const customStyles = {
   content : {
@@ -41,6 +42,7 @@ var Hour = React.createClass({
   _processSubmit: function(e) {
     e.preventDefault();
     this.setState({backgroundColor: 'red'});
+    SetMeeting.setMeeting();
     this._closeModal();
   },
 

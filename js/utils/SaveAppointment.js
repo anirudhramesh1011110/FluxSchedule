@@ -1,6 +1,8 @@
 module.exports = {
   saveObj: function(appointment) {
-    var rawMessages = JSON.parse(localStorage.getItem('messages'));
-    rawMessages.push(appointment);
+    
+    //rawMessages.push(appointment);
+    //localStorage.setItem('appointments', JSON.stringify(rawMessages));
+    localStorage.setItem('appointments', JSON.stringify(appointment));
   }
 };

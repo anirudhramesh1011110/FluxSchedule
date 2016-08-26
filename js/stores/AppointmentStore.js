@@ -52,6 +52,15 @@ var _appoints = {
   }
 };
 
+// var arr = JSON.parse(localStorage.getItem('appointments'));
+// var _appoints = {};
+// for(var obj in arr){
+//   _appoints[obj.time]= {
+//     name: obj.name,
+//     number: obj.phone
+//   }
+// }
+
 var AppointmentStore = assign({}, EventEmitter.prototype, {
 
   init: function() {

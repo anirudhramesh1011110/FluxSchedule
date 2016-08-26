@@ -1,7 +1,7 @@
 var Dispatcher = require('../dispatcher/Dispatcher');
 var Constants = require('../constants/Constants');
 var CreateAppointment = require('../utils/CreateAppointment');
-var SaveAppointment = require('../utils/Appointment');
+var SaveAppointment = require('../utils/SaveAppointment');
 
 var ActionTypes = Constants.ActionTypes;
 
@@ -15,6 +15,7 @@ module.exports = {
       time: time
     });
     var appointment = CreateAppointment.createAppointmentObj(name, number, time);
+    SaveAppointment.saveObj(appointment);
   }
 
 };

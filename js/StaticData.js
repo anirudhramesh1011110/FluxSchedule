@@ -8,7 +8,11 @@ module.exports = {
   init: function() {
     localStorage.clear();
     localStorage.setItem('appointments', JSON.stringify([
-      
+      {
+       name: "Ani",
+       number: "23423432"
+      },
+
     ]));
   }
 };

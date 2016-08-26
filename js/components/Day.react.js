@@ -3,7 +3,7 @@ var Hour = require('./Hour.react');
 var AppointmentStore = require('../stores/AppointmentStore');
 var StaticData = require('../StaticData');
 
-StaticData.init();
+//StaticData.init();
 
 function getStateFromStores() {
   return AppointmentStore.getAppointments();
@@ -12,10 +12,13 @@ function getStateFromStores() {
 var Day = React.createClass({
 
   getInitialState: function() {
-    return getStateFromStores();
+    return getStateFromStores()
+
+
   },
 
   render: function() {
+    console.log(this.state);
     var state = this.state;
 
     return (

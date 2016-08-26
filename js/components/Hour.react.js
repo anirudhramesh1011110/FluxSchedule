@@ -42,7 +42,7 @@ var Hour = React.createClass({
   _processSubmit: function(e) {
     e.preventDefault();
     this.setState({backgroundColor: 'red'});
-    SetMeeting.setMeeting();
+    //SetMeeting.setMeeting("Ani", "34123414", "ten");
     this._closeModal();
   },
 

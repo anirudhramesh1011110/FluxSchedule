@@ -1,8 +1,7 @@
+var Dispatcher = require('../dispatcher/Dispatcher');
+var Constants = require('../constants/Constants');
 
- var Dispatcher = require('../dispatcher/Dispatcher');
- var Constants = require('../constants/Constants');
-
- var ActionTypes = Constants.ActionTypes;
+var ActionTypes = Constants.ActionTypes;
 
 module.exports = {
 

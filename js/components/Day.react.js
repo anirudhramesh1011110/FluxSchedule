@@ -18,7 +18,7 @@ var Day = React.createClass({
 
     return (
       <div className="day-block">
-        <Hour name={"9:00 - 10:00"} c={'nine'} contactName={state['nine'].name} contactNumber={state['nine'].phone} />
+        <Hour name={"9:00 - 10:00"} c={'nine'} contactName={state['nine'].name} contactNumber={state['nine'].phone } />
         <Hour name={"10:00 - 11:00"} c={'ten'} contactName={state['ten'].name} contactNumber={state['ten'].phone}/>
         <Hour name={"11:00 - 12:00"} c={'eleven'} contactName={state['eleven'].name} contactNumber={state['eleven'].phone}/>
         <Hour name={"12:00 - 1:00"} c={'twelve'} contactName={state['twelve'].name} contactNumber={state['twelve'].phone}/>

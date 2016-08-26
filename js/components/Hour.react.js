@@ -19,27 +19,10 @@ function getStateFromStores() {
   return AppointmentStore.getAppointments();
 }
 
-function getStateById(e) {
-  //e.preventDefault();
-  var state = getStateFromStores();
-  return boxState = state[e];
-}
-
 var Hour = React.createClass({
 
   getInitialState: function() {
     return getStateFromStores();
-  },
-
-
-  componentDidMount: function() {
-    //ThreadStore.addChangeListener(this._onChange);
-    //UnreadThreadStore.addChangeListener(this._onChange);
-  },
-
-  componentWillUnmount: function() {
-    //ThreadStore.removeChangeListener(this._onChange);
-    //UnreadThreadStore.removeChangeListener(this._onChange);
   },
 
   _openModal: function(e) {
@@ -57,12 +40,6 @@ var Hour = React.createClass({
    */
   _processSubmit: function(e) {
     e.preventDefault();
-    console.log(e);
-    // var newObj = this.state;
-    // newObj[current] = {
-    //
-    // }
-
     this.setState({backgroundColor: 'red'});
     this._closeModal();
   },
@@ -76,7 +53,6 @@ var Hour = React.createClass({
 
 
   render: function() {
-
     return (
       <div className="hour-block" onClick={this._openModal} style={{backgroundColor:this.state.backgroundColor}}>
         <div className={this.props.c}><b>{this.props.name}</b>

@@ -1,0 +1,11 @@
+.hour-block {
+  padding: 20px;
+  margin: 5px;
+  width: 20%;
+  border-color: black;
+  border-style: solid;
+}
+
+.time {
+  text-align: center;
+}

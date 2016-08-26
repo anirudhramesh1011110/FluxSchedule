@@ -1,7 +1,9 @@
 var React = require('react');
 var Hour = require('./Hour.react');
 var AppointmentStore = require('../stores/AppointmentStore');
+var StaticData = require('../StaticData');
 
+StaticData.init();
 
 function getStateFromStores() {
   return AppointmentStore.getAppointments();

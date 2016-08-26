@@ -18,7 +18,7 @@ var Day = React.createClass({
     }
     return (
       <div className="day-block">
-        <Hour name={"9:00 - 10:00"} c={'nine'}/>
+        <Hour name={"9:00 - 10:00"} c={'nine'} />
         <Hour name={"10:00 - 11:00"} c={'ten'}/>
         <Hour name={"11:00 - 12:00"} c={'eleven'}/>
         <Hour name={"12:00 - 1:00"} c={'twelve'}/>

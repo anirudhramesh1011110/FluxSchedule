@@ -13,26 +13,27 @@ const customStyles = {
   }
 };
 
+var current = null;
+
 function getStateFromStores() {
   return AppointmentStore.getAppointments();
 }
 
 function getStateById(e) {
-  e.preventDefault();
+  //e.preventDefault();
   var state = getStateFromStores();
-  //boxState = state[e.]
-
-
+  return boxState = state[e];
 }
 
 var Hour = React.createClass({
 
   getInitialState: function() {
-    return {
-      appointments: getStateFromStores(),
-      modalIsOpen: false,
-      backgroundColor: "white"
-    }
+    // return {
+    //   appointments: getStateFromStores(),
+    //   modalIsOpen: false,
+    //   backgroundColor: "white"
+    // }
+    return getStateFromStores();
   },
 
 
@@ -47,11 +48,12 @@ var Hour = React.createClass({
   },
 
   _openModal: function(e) {
-    console.log(e);
+    current = e.target.className;
+    //console.log(this.state[current]['name'])
     this.setState({modalIsOpen: true});
   },
 
-  _closeModal: function() {
+  _closeModal: function(e) {
     this.setState({modalIsOpen: false});
   },
 
@@ -60,6 +62,12 @@ var Hour = React.createClass({
    */
   _processSubmit: function(e) {
     e.preventDefault();
+    console.log(e);
+    // var newObj = this.state;
+    // newObj[current] = {
+    //
+    // }
+
     this.setState({backgroundColor: 'red'});
     this._closeModal();
   },
@@ -74,22 +82,34 @@ var Hour = React.createClass({
 
   render: function() {
 
+
+    var name = " ";
+    var number = " ";
+    if(current){
+      var state = this.state;
+      name = state.name;
+      number = state.phone;
+    }
+
+
     return (
       <div className="hour-block" onClick={this._openModal} style={{backgroundColor:this.state.backgroundColor}}>
-        <div className={this.props.c}><b>{this.props.name}</b></div>
-        <Modal
-         isOpen={this.state.modalIsOpen}
-         onRequestClose={this._closeModal}
-         style={customStyles}>
-         <h2>Enter Info</h2>
-         <form>
-           <p>Name: <input /></p>
-           <p>Phone: <input /></p>
-         </form>
-         <h2>Current Meeting</h2>
-
-         <button onClick={this._processSubmit}>Submit</button>
-       </Modal>
+        <div className={this.props.c}><b>{this.props.name}</b>
+          <Modal
+           isOpen={this.state.modalIsOpen}
+           onRequestClose={this._closeModal}
+           style={customStyles}>
+           <h2>Enter Info: </h2>
+           <form>
+             <p>Name: <input /></p>
+             <p>Phone: <input /></p>
+           </form>
+           <h2>Current Meeting: </h2>
+           <p>Name: {this.state['nine']['name']}</p>
+           <p>Phone: {this.state['nine']['phone']}</p>
+           <button onClick={this._processSubmit}>Submit</button>
+         </Modal>
+       </div>
       </div>
     );
   }

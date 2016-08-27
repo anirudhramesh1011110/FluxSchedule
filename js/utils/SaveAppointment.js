@@ -1,8 +1,11 @@
+var StaticData = require('../StaticData');
+
 module.exports = {
   saveObj: function(appointment) {
-    
-    //rawMessages.push(appointment);
-    //localStorage.setItem('appointments', JSON.stringify(rawMessages));
-    localStorage.setItem('appointments', JSON.stringify(appointment));
+    var time = appointment.time;
+    console.log(time);
+    StaticData[time] = appointment;
+    console.log("Saved Object in Data", StaticData);
+    return StaticData;
   }
 };

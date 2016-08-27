@@ -1,18 +1,49 @@
 /**
- *  File contains sample data that will exist in state on the start of
- *  the application.
- */
+*  File contains template state data that will exist in state on the start of
+*  the application.
+*/
 
-module.exports = {
-
-  init: function() {
-    localStorage.clear();
-    localStorage.setItem('appointments', JSON.stringify([
-      {
-       name: "Ani",
-       number: "23423432"
-      },
-
-    ]));
+var data = {
+  nine: {
+    time: "nine",
+    name: " ",
+    phone: " "
+  },
+  ten: {
+    time: "ten",
+    name: " ",
+    phone: " "
+  },
+  eleven: {
+    time: "eleven",
+    name: " ",
+    phone: " "
+  },
+  twelve: {
+    time: "twelve",
+    name: " ",
+    phone: " "
+  },
+  one: {
+    time: "one",
+    name: " ",
+    phone: " "
+  },
+  two: {
+    time: "two",
+    name: " ",
+    phone: " "
+  },
+  three: {
+    time: "three",
+    name: " ",
+    phone: " "
+  },
+  four: {
+    time: "four",
+    name: " ",
+    phone: " "
   }
-};
+}
+
+module.exports = data;

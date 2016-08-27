@@ -42,8 +42,10 @@ var Hour = React.createClass({
   _processSubmit: function(e) {
     e.preventDefault();
     this.setState({backgroundColor: 'red'});
-    //SetMeeting.setMeeting("Ani", "34123414", "ten");
+    var ret = SetMeeting.setMeeting("Ani", "34123414", "ten");
+    this._onChange();
     this._closeModal();
+    this.forceUpdate();
   },
 
   /**
@@ -51,10 +53,15 @@ var Hour = React.createClass({
    */
   _onChange: function() {
     this.setState(getStateFromStores());
+    console.log(this.state);
   },
 
 
   render: function() {
+
+    console.log(" HOUR STATE", this.state);
+    //console.log(this.state[this.props.c].name);
+
     return (
       <div className="hour-block" onClick={this._openModal} style={{backgroundColor:this.state.backgroundColor}}>
         <div className={this.props.c}><b>{this.props.name}</b>
@@ -69,8 +76,8 @@ var Hour = React.createClass({
              <p>Phone: <input /></p>
            </form>
            <h2>Current Meeting: </h2>
-           <p>Name: {this.props.contactName} </p>
-           <p>Phone: {this.props.contactNumber}</p>
+           <p>Name: {this.state[this.props.c].name} </p>
+           <p>Phone: {this.state[this.props.c].phone}</p>
            <button onClick={this._processSubmit}>Submit</button>
          </Modal>
        </div>

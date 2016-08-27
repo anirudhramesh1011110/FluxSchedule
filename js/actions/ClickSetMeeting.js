@@ -15,7 +15,8 @@ module.exports = {
       time: time
     });
     var appointment = CreateAppointment.createAppointmentObj(name, number, time);
-    SaveAppointment.saveObj(appointment);
+    var data = SaveAppointment.saveObj(appointment);
+    return data;
   }
 
 };

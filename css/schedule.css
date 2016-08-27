@@ -1,11 +1,49 @@
 .hour-block {
-  padding: 20px;
   margin: 5px;
   width: 20%;
   border-color: black;
   border-style: solid;
 }
-
 .time {
   text-align: center;
+}
+.nine {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.ten {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.eleven {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.twelve {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.one {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.two {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.three {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.four {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
 }

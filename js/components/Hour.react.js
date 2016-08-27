@@ -16,6 +16,9 @@ const customStyles = {
 
 var current = null;
 
+var name = null;
+var number = null;
+
 function getStateFromStores() {
   return AppointmentStore.getAppointments();
 }
@@ -27,6 +30,7 @@ var Hour = React.createClass({
   },
 
   _openModal: function(e) {
+    console.log(e.target)
     current = e.target.className;
     //console.log(this.state[current]['name'])
     this.setState({modalIsOpen: true});
@@ -41,8 +45,9 @@ var Hour = React.createClass({
    */
   _processSubmit: function(e) {
     e.preventDefault();
+    console.log(current)
     this.setState({backgroundColor: 'red'});
-    var ret = SetMeeting.setMeeting("Ani", "34123414", "ten");
+    var ret = SetMeeting.setMeeting(name, number, current);
     this._onChange();
     this._closeModal();
     this.forceUpdate();
@@ -56,11 +61,20 @@ var Hour = React.createClass({
     console.log(this.state);
   },
 
+  _getNameVal: function(e) {
+    name = e.target.value;
+
+  },
+
+  _getNumberVal: function(e) {
+    number = e.target.value;
+
+  },
+
 
   render: function() {
 
     console.log(" HOUR STATE", this.state);
-    //console.log(this.state[this.props.c].name);
 
     return (
       <div className="hour-block" onClick={this._openModal} style={{backgroundColor:this.state.backgroundColor}}>
@@ -72,8 +86,8 @@ var Hour = React.createClass({
            style={customStyles}>
            <h2>Enter Info: </h2>
            <form>
-             <p>Name: <input /></p>
-             <p>Phone: <input /></p>
+             <p>Name: <input onChange={this._getNameVal} /></p>
+             <p>Phone: <input onChange={this._getNumberVal} /></p>
            </form>
            <h2>Current Meeting: </h2>
            <p>Name: {this.state[this.props.c].name} </p>
